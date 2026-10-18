@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading Hub — UI Preview</title>
+<style>
+  :root { --bg:#0e1116; --card:#161b23; --text:#e8eaf0; --muted:#9aa3b2; --accent:#f5a623; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif; }
+  header { padding:28px 24px 8px; }
+  h1 { margin:0 0 4px; font-size:22px; }
+  header p { margin:0; color:var(--muted); font-size:14px; }
+  nav { padding:12px 24px 4px; display:flex; flex-wrap:wrap; gap:8px; }
+  nav a { color:var(--accent); text-decoration:none; font-size:13px; background:var(--card); padding:5px 12px; border-radius:999px; }
+  nav a:hover { filter:brightness(1.2); }
+  main { padding:12px 24px 48px; }
+  section { margin-top:28px; }
+  h2 { font-size:16px; margin:0 0 4px; border-left:3px solid var(--accent); padding-left:10px; }
+  section p.desc { color:var(--muted); font-size:13px; margin:0 0 12px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:14px; }
+  figure { margin:0; background:var(--card); border-radius:12px; overflow:hidden; cursor:zoom-in; }
+  img { width:100%; display:block; }
+  figcaption { padding:8px 12px; font-size:12.5px; color:var(--muted); }
+  dialog { border:none; border-radius:12px; background:transparent; max-width:96vw; }
+  dialog img { max-width:96vw; max-height:88vh; border-radius:12px; }
+  dialog::backdrop { background:rgba(0,0,0,.75); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Trading Hub — English UI preview</h1>
+  <p>Headless captures of the <code>english-only</code> branch (branch tip <code>e7b3dec</code>). All strings shown are live UI text rendered by the app itself.</p>
+</header>
+<nav>
+  <a href="#trading">Trading</a><a href="#dom">DOM &amp; panels</a><a href="#backtest">Backtesting</a><a href="#strategies">Strategies &amp; Claude</a><a href="#connections">Connections</a><a href="#accounts">Accounts</a><a href="#data">Data</a><a href="#footprint">Footprint</a><a href="#theme">Themes</a>
+</nav>
+<main>
+
+<section id="trading">
+  <h2>Trading</h2>
+  <p class="desc">Main chart, layouts, brackets, drawings and narrow layout.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/trading_float.png"><figcaption>Chart window (floating)</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_layout4.png"><figcaption>Four-chart layout</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_layout6.png"><figcaption>Six-chart layout</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_narrow.png"><figcaption>Narrow chart layout</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_brackets.png"><figcaption>Bracket editor (stop &amp; targets)</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_drawings.png"><figcaption>Drawing objects on chart</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_drawings_scrolled.png"><figcaption>Drawing objects (scrolled)</figcaption></figure>
+    <figure><img loading="lazy" src="shots/oanda_chart.png"><figcaption>Forex chart (OANDA feed)</figcaption></figure>
+  </div>
+</section>
+
+<section id="dom">
+  <h2>DOM &amp; side panels</h2>
+  <p class="desc">Depth of market, tape, ticket and panel arrangement states.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/panel_all_detached.png"><figcaption>All panels detached</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_window_dom.png"><figcaption>DOM in its own window</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_window_tape.png"><figcaption>Tape in its own window</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_window_ticket.png"><figcaption>Ticket in its own window</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_three.png"><figcaption>Three panels docked</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_tape_scrolled.png"><figcaption>Tape scrolled back</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_ticket_bottom.png"><figcaption>Ticket docked at bottom</figcaption></figure>
+    <figure><img loading="lazy" src="shots/panel_back.png"><figcaption>Panels docked back</figcaption></figure>
+    <figure><img loading="lazy" src="shots/trading_domsettings.png"><figcaption>DOM settings window</figcaption></figure>
+    <figure><img loading="lazy" src="shots/confirm_dialog.png"><figcaption>Confirmation bubble</figcaption></figure>
+  </div>
+</section>
+
+<section id="backtest">
+  <h2>Backtesting</h2>
+  <p class="desc">Backtest results, by-market breakdown, optimization and period bar.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/backtest_market.png"><figcaption>Backtest results, “By market” tab</figcaption></figure>
+    <figure><img loading="lazy" src="shots/backtest_market_filtered.png"><figcaption>Rerun with the “only in range” filter</figcaption></figure>
+    <figure><img loading="lazy" src="shots/optimize_periods.png"><figcaption>Optimizer with several candle periods</figcaption></figure>
+    <figure><img loading="lazy" src="shots/strategy_settings.png"><figcaption>Strategy settings</figcaption></figure>
+    <figure><img loading="lazy" src="shots/strategy_settings_results.png"><figcaption>Strategy settings with results</figcaption></figure>
+    <figure><img loading="lazy" src="shots/period_bar.png"><figcaption>Candle period bar</figcaption></figure>
+    <figure><img loading="lazy" src="shots/chart_bar.png"><figcaption>Chart toolbar details</figcaption></figure>
+  </div>
+</section>
+
+<section id="strategies">
+  <h2>Strategies &amp; Claude</h2>
+  <p class="desc">Strategy list, code editor, Claude chat window and live visual check.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/strategies_favorites.png"><figcaption>Strategy favorites</figcaption></figure>
+    <figure><img loading="lazy" src="shots/strategies_code.png"><figcaption>C# strategy editor</figcaption></figure>
+    <figure><img loading="lazy" src="shots/strategies_claudefloat_window.png"><figcaption>Claude chat in its own window</figcaption></figure>
+    <figure><img loading="lazy" src="shots/strategies_claudefloat_main.png"><figcaption>Main window while chat is detached</figcaption></figure>
+    <figure><img loading="lazy" src="shots/strategy_visual.png"><figcaption>Strategy drawn on chart (visual check)</figcaption></figure>
+  </div>
+</section>
+
+<section id="connections">
+  <h2>Connections</h2>
+  <p class="desc">Broker and data-feed forms (each one per connection).</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/connection_rithmic.png" onerror="this.parentNode.style.display='none'"><figcaption>Rithmic</figcaption></figure>
+    <figure><img loading="lazy" src="shots/connection_tradovate.png"><figcaption>Tradovate</figcaption></figure>
+    <figure><img loading="lazy" src="shots/connection_oanda.png"><figcaption>OANDA</figcaption></figure>
+    <figure><img loading="lazy" src="shots/connection_alpaca.png"><figcaption>Alpaca</figcaption></figure>
+    <figure><img loading="lazy" src="shots/connection_ctrader.png"><figcaption>cTrader</figcaption></figure>
+    <figure><img loading="lazy" src="shots/connection_databento.png"><figcaption>Databento</figcaption></figure>
+    <figure><img loading="lazy" src="shots/tradovate_account.png"><figcaption>Tradovate account check</figcaption></figure>
+    <figure><img loading="lazy" src="shots/oanda_chart.png"><figcaption>OANDA instrument chart</figcaption></figure>
+  </div>
+</section>
+
+<section id="accounts">
+  <h2>Accounts</h2>
+  <p class="desc">Simulated and Rithmic accounts (list pages).</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/accounts_sim_0.png"><figcaption>Simulated account</figcaption></figure>
+    <figure><img loading="lazy" src="shots/accounts_rithmic_0.png"><figcaption>Rithmic account</figcaption></figure>
+  </div>
+</section>
+
+<section id="data">
+  <h2>Data</h2>
+  <p class="desc">History download, imports and per-feed data pages.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/download_data.png"><figcaption>Download history</figcaption></figure>
+    <figure><img loading="lazy" src="shots/data_databento.png"><figcaption>Databento data page</figcaption></figure>
+    <figure><img loading="lazy" src="shots/data_rithmic_year.png"><figcaption>Rithmic — one year by contracts</figcaption></figure>
+    <figure><img loading="lazy" src="shots/data_import.png"><figcaption>CSV import</figcaption></figure>
+  </div>
+</section>
+
+<section id="footprint">
+  <h2>Footprint</h2>
+  <p class="desc">Footprint colors and the column/layout editor.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/footprint_colors.png"><figcaption>Footprint colors</figcaption></figure>
+    <figure><img loading="lazy" src="shots/footprint_editor_bid.png"><figcaption>Editor — bid columns</figcaption></figure>
+    <figure><img loading="lazy" src="shots/footprint_editor_delta.png"><figcaption>Editor — delta columns</figcaption></figure>
+    <figure><img loading="lazy" src="shots/indicators.png"><figcaption>Indicators window</figcaption></figure>
+    <figure><img loading="lazy" src="shots/choice.png"><figcaption>History source menu</figcaption></figure>
+    <figure><img loading="lazy" src="shots/picker.png"><figcaption>Instrument picker</figcaption></figure>
+    <figure><img loading="lazy" src="shots/corners.png"><figcaption>Corner overlays</figcaption></figure>
+  </div>
+</section>
+
+<section id="theme">
+  <h2>Themes</h2>
+  <p class="desc">Light and dark themes across pages.</p>
+  <div class="grid">
+    <figure><img loading="lazy" src="shots/theme_light.png"><figcaption>Light theme</figcaption></figure>
+    <figure><img loading="lazy" src="shots/theme_dark.png"><figcaption>Dark theme</figcaption></figure>
+    <figure><img loading="lazy" src="shots/theme_settings_light.png"><figcaption>Settings (light)</figcaption></figure>
+    <figure><img loading="lazy" src="shots/theme_chart_settings_light.png"><figcaption>Chart settings (light)</figcaption></figure>
+    <figure><img loading="lazy" src="shots/theme_accounts_dark.png"><figcaption>Accounts (dark)</figcaption></figure>
+  </div>
+</section>
+
+</main>
+<dialog id="dlg"><img id="dlgimg" alt=""></dialog>
+<script>
+  const dlg = document.getElementById('dlg'), img = document.getElementById('dlgimg');
+  document.querySelectorAll('figure img').forEach(i => i.addEventListener('click', () => { img.src = i.src; dlg.showModal(); }));
+  dlg.addEventListener('click', () => dlg.close());
+</script>
+</body>
+</html>
